@@ -18,6 +18,33 @@ const MAX_DESCRIPTION = 300;
 const ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const SCRIPT_EXTENSIONS = new Set([".py", ".sh", ".js", ".mjs", ".cjs", ".ts", ".rb", ".ps1"]);
 
+// Preserve addedAt across regenerations; new entries get today's date.
+const previous = existsSync(path.join(ROOT, "catalog.json")) ? readJson("catalog.json") : {};
+const addedAtById = new Map((previous.entries ?? []).map((entry) => [entry.id, entry.addedAt]));
+const today = new Date().toISOString().slice(0, 10);
+
+/** GitHub stargazers + last push per collection repo (token optional, 60 req/h unauthenticated). */
+async function fetchRepoStats(repo) {
+  const match = repo.match(/^https:\/\/github\.com\/([^/]+\/[^/.]+?)(?:\.git)?$/);
+  if (!match) return null;
+  const headers = { Accept: "application/vnd.github+json", "User-Agent": "chain-hub-catalog" };
+  if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  try {
+    const response = await fetch(`https://api.github.com/repos/${match[1]}`, { headers });
+    if (!response.ok) return null;
+    const data = await response.json();
+    return { stars: data.stargazers_count ?? undefined, pushedAt: data.pushed_at ?? undefined };
+  } catch {
+    return null;
+  }
+}
+const statsByRepo = new Map();
+await Promise.all(
+  [...new Set(config.collections.map((collection) => collection.repo))].map(async (repo) => {
+    statsByRepo.set(repo, await fetchRepoStats(repo));
+  })
+);
+
 function globToRegExp(glob) {
   const escaped = glob.replace(/[.+^${}()|[\]\\]/g, "\\$&");
   return new RegExp(`^${escaped.replace(/\*\*/g, "\u0000").replace(/\*/g, "[^/]+").replace(/\u0000/g, ".*")}$`);
@@ -139,6 +166,8 @@ for (const collection of config.collections) {
           tags: [...new Set([...(collection.tags ?? []), ...(tagMatch ? [tagMatch[1].replace(/^\d+-/, "")] : [])])],
           source: { repo: collection.repo, subdir, ...(collection.ref ? { ref: collection.ref } : {}) },
           hasScripts,
+          addedAt: addedAtById.get(id) ?? today,
+          stats: statsByRepo.get(collection.repo) ?? undefined,
           ...overrides[id]
         };
         entries.push(entry);
@@ -153,7 +182,6 @@ for (const collection of config.collections) {
   report.push({ repo: collection.repo, ...counts, skipped });
 }
 
-const previous = existsSync(path.join(ROOT, "catalog.json")) ? readJson("catalog.json") : {};
 const index = { version: 1, catalog: config.catalog ?? previous.catalog, entries };
 writeFileSync(path.join(ROOT, "catalog.json"), `${JSON.stringify(index, null, 2)}\n`);
 

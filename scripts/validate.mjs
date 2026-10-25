@@ -11,8 +11,9 @@ const KINDS = ["skills", "agents", "workflows"];
 const CATEGORIES = ["code-quality", "design", "docs", "testing", "devops", "research", "writing", "productivity", "editor-integration", "other"];
 const LICENSES = ["MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC", "MPL-2.0", "CC-BY-4.0", "CC0-1.0", "Unlicense"];
 const ID_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-const ENTRY_KEYS = new Set(["id", "kind", "name", "description", "author", "license", "category", "tags", "source", "hasScripts"]);
+const ENTRY_KEYS = new Set(["id", "kind", "name", "description", "author", "license", "category", "tags", "source", "hasScripts", "addedAt", "stats"]);
 const SOURCE_KEYS = new Set(["repo", "subdir", "ref"]);
+const STATS_KEYS = new Set(["stars", "pushedAt"]);
 
 const offline = process.argv.includes("--offline");
 const errors = [];
