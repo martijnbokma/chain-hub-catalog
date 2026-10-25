@@ -1,17 +1,27 @@
 # Contributing
 
-Submit a pull request that adds one entry to `catalog.json`.
+`catalog.json` is generated from `collections.json` and `overrides.json`; pull requests should change those, not `catalog.json`.
 
-Requirements, enforced by `.github/workflows/validate.yml`:
+## Propose a repository
 
-- The schema matches the format in the README; unknown fields are rejected.
-- `id` is kebab-case and unique.
-- `license` is an OSI/Creative Commons license from the allowlist in `scripts/validate.mjs`.
-- `source.repo` is a public https git repository that clones, and `subdir` exists in it.
-- Skills have a `SKILL.md` with `name` and `description` in its frontmatter.
-- `hasScripts` is `true` when the skill ships a `scripts/` directory or any other executable files.
-- Descriptions are in English, one sentence, and describe what the asset does.
+Add one object to `collections` in `collections.json`:
 
-Run the checks locally with `node scripts/validate.mjs` (Node 20+ and git required).
+- `repo`: public https git repository; `ref`: branch or tag to index.
+- `author` and `license`: the license must be on the allowlist in `scripts/validate.mjs` and cover every indexed asset.
+- `include`: one or more `{ "kind": "skills" | "agents" | "workflows", "glob": "..." }`. Skills match a `SKILL.md`; agents and workflows match single `.md` files whose file name becomes the entry id.
+- Optional: `category` (default), `categories` (`[regex, category]` rules on the file path), `tags`, `tagPattern` (regex whose first group becomes a tag), `exclude` (ids), `requireAssetLicense` (skip skills without their own matching LICENSE file).
 
-Pin `source.ref` to a tag or commit when the upstream repository moves fast.
+## Adjust an entry
+
+Add or edit the entry id in `overrides.json` to set a better `name`, `description`, `category` or `tags`.
+
+## Checks
+
+Enforced by `.github/workflows/validate.yml` and run by the generator workflow:
+
+- The schema matches the format in the README; unknown fields are rejected; ids are kebab-case and unique.
+- Every `source.repo` clones and every `subdir` exists.
+- Skills have a `SKILL.md` with `name` and `description`; agents have `name` and `description` frontmatter; workflows have `description`.
+- `hasScripts` is `true` when a skill ships a `scripts/` directory (the generator also flags other executable files).
+
+Run them locally with `node scripts/generate.mjs && node scripts/validate.mjs`.

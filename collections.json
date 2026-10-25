@@ -1,0 +1,379 @@
+{
+  "version": 1,
+  "catalog": {
+    "id": "chain-hub",
+    "name": "Chain Hub Catalog",
+    "contact": "martijnbokma"
+  },
+  "categoryKeywords": [
+    [
+      "test|tdd|qa-|playwright|e2e",
+      "testing"
+    ],
+    [
+      "kubernetes|cloud|devops|deploy|ci-?cd|incident|infra|terraform|docker|observab|monitor|database|sre|network|k8s|helm",
+      "devops"
+    ],
+    [
+      "security|review|refactor|lint|debug|quality|legacy|moderniz",
+      "code-quality"
+    ],
+    [
+      "documentation|/docs?-|api-doc|tutorial|readme|mermaid",
+      "docs"
+    ],
+    [
+      "seo|content|marketing|copywrit|writing",
+      "writing"
+    ],
+    [
+      "ui-|/ui/|design|frontend|accessib|/ux|css|tailwind|mobile",
+      "design"
+    ],
+    [
+      "research|analy|data-sci|machine-learning|ml-|llm|/ai-",
+      "research"
+    ],
+    [
+      "mcp|cursor|claude-code|vscode",
+      "editor-integration"
+    ],
+    [
+      "productiv|workflow|git|project|plan|business|startup|orchestrat",
+      "productivity"
+    ]
+  ],
+  "collections": [
+    {
+      "repo": "https://github.com/martijnbokma/agent-assets",
+      "ref": "main",
+      "author": "martijnbokma",
+      "license": "MIT",
+      "category": "code-quality",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/obra/superpowers",
+      "ref": "main",
+      "author": "obra",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": [
+        "superpowers"
+      ],
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/anthropics/skills",
+      "ref": "main",
+      "author": "anthropics",
+      "license": "Apache-2.0",
+      "requireAssetLicense": true,
+      "category": "other",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/wshobson/agents",
+      "ref": "main",
+      "author": "wshobson",
+      "license": "MIT",
+      "category": "other",
+      "tagPattern": "^plugins/([^/]+)/",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "plugins/*/skills/*/SKILL.md"
+        },
+        {
+          "kind": "agents",
+          "glob": "plugins/*/agents/*.md"
+        },
+        {
+          "kind": "workflows",
+          "glob": "plugins/*/commands/*.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/VoltAgent/awesome-claude-code-subagents",
+      "ref": "main",
+      "author": "VoltAgent",
+      "license": "MIT",
+      "category": "other",
+      "tagPattern": "^categories/([^/]+)/",
+      "categories": [
+        [
+          "^categories/03-",
+          "devops"
+        ],
+        [
+          "^categories/04-",
+          "code-quality"
+        ],
+        [
+          "^categories/(05|10)-",
+          "research"
+        ],
+        [
+          "^categories/(06|08|09)-",
+          "productivity"
+        ]
+      ],
+      "include": [
+        {
+          "kind": "agents",
+          "glob": "categories/*/*.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/vercel-labs/agent-skills",
+      "ref": "main",
+      "author": "vercel-labs",
+      "license": "MIT",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/supabase/agent-skills",
+      "ref": "main",
+      "author": "supabase",
+      "license": "MIT",
+      "category": "devops",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/microsoft/azure-skills",
+      "ref": "main",
+      "author": "microsoft",
+      "license": "MIT",
+      "category": "devops",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/cloudflare/skills",
+      "ref": "main",
+      "author": "cloudflare",
+      "license": "Apache-2.0",
+      "category": "devops",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/prisma/skills",
+      "ref": "main",
+      "author": "prisma",
+      "license": "MIT",
+      "category": "devops",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/firebase/agent-skills",
+      "ref": "main",
+      "author": "firebase",
+      "license": "Apache-2.0",
+      "category": "devops",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/convex/agent-skills",
+      "ref": "main",
+      "author": "convex",
+      "license": "Apache-2.0",
+      "category": "devops",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/expo/skills",
+      "ref": "main",
+      "author": "expo",
+      "license": "MIT",
+      "category": "design",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "plugins/expo/skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/shadcn-ui/ui",
+      "ref": "main",
+      "author": "shadcn-ui",
+      "license": "MIT",
+      "category": "design",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/greensock/gsap-skills",
+      "ref": "main",
+      "author": "greensock",
+      "license": "MIT",
+      "category": "design",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/emilkowalski/skills",
+      "ref": "main",
+      "author": "emilkowalski",
+      "license": "MIT",
+      "category": "design",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/pbakaus/impeccable",
+      "ref": "main",
+      "author": "pbakaus",
+      "license": "Apache-2.0",
+      "category": "design",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "plugin/skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/livekit/agent-skills",
+      "ref": "main",
+      "author": "livekit",
+      "license": "MIT",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/mattpocock/skills",
+      "ref": "main",
+      "author": "mattpocock",
+      "license": "MIT",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/engineering/*/SKILL.md"
+        },
+        {
+          "kind": "skills",
+          "glob": "skills/productivity/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/addyosmani/agent-skills",
+      "ref": "main",
+      "author": "addyosmani",
+      "license": "MIT",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "ref": "main",
+      "author": "coreyhaines31",
+      "license": "MIT",
+      "category": "writing",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/currents-dev/playwright-best-practices-skill",
+      "ref": "main",
+      "author": "currents-dev",
+      "license": "MIT",
+      "category": "testing",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "*/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repo": "https://github.com/samber/cc-skills-golang",
+      "ref": "main",
+      "author": "samber",
+      "license": "MIT",
+      "category": "code-quality",
+      "include": [
+        {
+          "kind": "skills",
+          "glob": "skills/*/SKILL.md"
+        }
+      ]
+    }
+  ]
+}

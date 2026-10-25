@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Validates catalog.json: schema (mirrors @chain-hub/contracts catalogIndexSchema),
-// unique ids, license allowlist, repo reachability and SKILL.md frontmatter.
+// unique ids, license allowlist, repo reachability and skill/agent/workflow frontmatter.
 // Zero dependencies: Node >= 20 + git on PATH. Usage: node scripts/validate.mjs [--offline]
 import { execFileSync } from "node:child_process";
 import { mkdtempSync, readFileSync, rmSync, existsSync } from "node:fs";
@@ -83,6 +83,17 @@ if (!offline && errors.length === 0) {
           const scripts = existsSync(path.join(root, "scripts"));
           // Authors may declare scripts outside scripts/ (conservative); an undeclared scripts/ dir always fails.
           if (scripts && !entry.hasScripts) fail(where, "hasScripts must be true: the skill ships a scripts/ directory");
+        } else {
+          // Agents and workflows install as a single markdown file named after the entry id.
+          if (!entry.source.subdir?.endsWith(".md")) {
+            fail(where, "source.subdir must point at the asset's .md file");
+            continue;
+          }
+          const frontmatter = readFileSync(root, "utf8").match(/^---\r?\n([\s\S]*?)\r?\n---/);
+          const needsName = entry.kind === "agents";
+          if (!frontmatter || !/^description:\s*\S/m.test(frontmatter[1]) || (needsName && !/^name:\s*\S/m.test(frontmatter[1]))) {
+            fail(where, `frontmatter needs ${needsName ? "name and description" : "description"}`);
+          }
         }
       }
     } catch (error) {

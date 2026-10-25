@@ -1,0 +1,137 @@
+{
+  "finding-refactor-candidates": {
+    "name": "Finding refactor candidates",
+    "description": "Exhaustive tech-debt scan with coverage manifest, priority matrix and wave plan.",
+    "category": "code-quality",
+    "tags": [
+      "refactoring",
+      "audit",
+      "tech-debt"
+    ]
+  },
+  "bundle-strategy-audit": {
+    "name": "Bundle strategy audit",
+    "description": "Audits code splitting, lazy loading, vendor chunks and externals for smaller initial bundles.",
+    "category": "code-quality",
+    "tags": [
+      "performance",
+      "bundling",
+      "code-splitting"
+    ]
+  },
+  "module-graph-audit": {
+    "name": "Module graph audit",
+    "description": "Audits barrel files, tree-shaking readiness, circular imports and package boundaries.",
+    "category": "code-quality",
+    "tags": [
+      "modules",
+      "tree-shaking",
+      "architecture"
+    ]
+  },
+  "design-advisor": {
+    "name": "Design advisor",
+    "description": "Industry-specific UI/UX recommendations: palettes, font pairings, page patterns and anti-patterns.",
+    "category": "design",
+    "tags": [
+      "ui",
+      "ux",
+      "palettes",
+      "typography"
+    ]
+  },
+  "brainstorming": {
+    "name": "Brainstorming",
+    "description": "Turns a rough idea into a validated design through structured questions before any code is written.",
+    "category": "productivity",
+    "tags": [
+      "planning",
+      "design",
+      "ideation"
+    ]
+  },
+  "systematic-debugging": {
+    "name": "Systematic debugging",
+    "description": "Four-phase root-cause debugging: reproduce, isolate, hypothesize, verify before fixing.",
+    "category": "code-quality",
+    "tags": [
+      "debugging",
+      "root-cause"
+    ]
+  },
+  "test-driven-development": {
+    "name": "Test-driven development",
+    "description": "Red-green-refactor discipline: write the failing test first, then the minimal code to pass it.",
+    "category": "testing",
+    "tags": [
+      "tdd",
+      "testing"
+    ]
+  },
+  "writing-plans": {
+    "name": "Writing plans",
+    "description": "Breaks an approved design into small, verifiable implementation steps an agent can execute.",
+    "category": "productivity",
+    "tags": [
+      "planning",
+      "tasks"
+    ]
+  },
+  "verification-before-completion": {
+    "name": "Verification before completion",
+    "description": "Requires running the actual checks and reading their output before claiming work is done.",
+    "category": "code-quality",
+    "tags": [
+      "verification",
+      "quality"
+    ]
+  },
+  "requesting-code-review": {
+    "name": "Requesting code review",
+    "description": "Prepares a change for review with context, risks and a focused checklist for the reviewer.",
+    "category": "code-quality",
+    "tags": [
+      "code-review",
+      "collaboration"
+    ]
+  },
+  "frontend-design": {
+    "name": "Frontend design",
+    "description": "Guides distinctive, production-grade frontend interfaces that avoid generic AI aesthetics.",
+    "category": "design",
+    "tags": [
+      "frontend",
+      "ui",
+      "design"
+    ]
+  },
+  "brand-guidelines": {
+    "name": "Brand guidelines",
+    "description": "Applies consistent brand colors and typography to generated artifacts.",
+    "category": "design",
+    "tags": [
+      "branding",
+      "typography"
+    ]
+  },
+  "webapp-testing": {
+    "name": "Web app testing",
+    "description": "Tests local web applications with Playwright: screenshots, logs and UI interaction.",
+    "category": "testing",
+    "tags": [
+      "playwright",
+      "e2e",
+      "browser"
+    ]
+  },
+  "mcp-builder": {
+    "name": "MCP server builder",
+    "description": "Guides building high-quality Model Context Protocol servers in Python or TypeScript.",
+    "category": "editor-integration",
+    "tags": [
+      "mcp",
+      "integration",
+      "tools"
+    ]
+  }
+}

@@ -27,4 +27,15 @@ Chain Hub fetches this file from `https://raw.githubusercontent.com/martijnbokma
 - `source`: public https git repo, optional `subdir` and `ref` (branch, tag or sha).
 - `hasScripts`: `true` when the asset bundles executable scripts. Verified by CI.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) to submit an entry.
+## How the index is built
+
+`catalog.json` is generated; do not edit it by hand.
+
+- `collections.json` lists the upstream repositories to index, with per-repo license, author, default category, path globs per kind (`skills/*/SKILL.md`, `agents/*.md`, ...) and optional category rules.
+- `overrides.json` holds curated fields (`name`, `description`, `category`, `tags`) keyed by entry id.
+- `scripts/generate.mjs` clones each collection, turns every match into an entry and writes `catalog.json`. The first collection that provides an id wins; skills whose own LICENSE does not match the collection license are skipped.
+- `.github/workflows/generate.yml` regenerates daily (and on changes to the inputs), validates and commits the result.
+
+Run it locally with `node scripts/generate.mjs && node scripts/validate.mjs` (Node 20+ and git required).
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) to propose a repository or adjust an entry.
