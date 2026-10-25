@@ -1,0 +1,271 @@
+{
+  "version": 1,
+  "catalog": {
+    "id": "chain-hub",
+    "name": "Chain Hub Catalog",
+    "contact": "martijnbokma"
+  },
+  "entries": [
+    {
+      "id": "finding-refactor-candidates",
+      "kind": "skills",
+      "name": "Finding refactor candidates",
+      "description": "Exhaustive tech-debt scan with coverage manifest, priority matrix and wave plan.",
+      "author": "martijnbokma",
+      "license": "MIT",
+      "category": "code-quality",
+      "tags": [
+        "refactoring",
+        "audit",
+        "tech-debt"
+      ],
+      "source": {
+        "repo": "https://github.com/martijnbokma/agent-assets",
+        "subdir": "skills/finding-refactor-candidates"
+      },
+      "hasScripts": true
+    },
+    {
+      "id": "bundle-strategy-audit",
+      "kind": "skills",
+      "name": "Bundle strategy audit",
+      "description": "Audits code splitting, lazy loading, vendor chunks and externals for smaller initial bundles.",
+      "author": "martijnbokma",
+      "license": "MIT",
+      "category": "code-quality",
+      "tags": [
+        "performance",
+        "bundling",
+        "code-splitting"
+      ],
+      "source": {
+        "repo": "https://github.com/martijnbokma/agent-assets",
+        "subdir": "skills/bundle-strategy-audit"
+      },
+      "hasScripts": false
+    },
+    {
+      "id": "module-graph-audit",
+      "kind": "skills",
+      "name": "Module graph audit",
+      "description": "Audits barrel files, tree-shaking readiness, circular imports and package boundaries.",
+      "author": "martijnbokma",
+      "license": "MIT",
+      "category": "code-quality",
+      "tags": [
+        "modules",
+        "tree-shaking",
+        "architecture"
+      ],
+      "source": {
+        "repo": "https://github.com/martijnbokma/agent-assets",
+        "subdir": "skills/module-graph-audit"
+      },
+      "hasScripts": false
+    },
+    {
+      "id": "design-advisor",
+      "kind": "skills",
+      "name": "Design advisor",
+      "description": "Industry-specific UI/UX recommendations: palettes, font pairings, page patterns and anti-patterns.",
+      "author": "martijnbokma",
+      "license": "MIT",
+      "category": "design",
+      "tags": [
+        "ui",
+        "ux",
+        "palettes",
+        "typography"
+      ],
+      "source": {
+        "repo": "https://github.com/martijnbokma/agent-assets",
+        "subdir": "skills/design-advisor"
+      },
+      "hasScripts": true
+    },
+    {
+      "id": "brainstorming",
+      "kind": "skills",
+      "name": "Brainstorming",
+      "description": "Turns a rough idea into a validated design through structured questions before any code is written.",
+      "author": "obra",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": [
+        "planning",
+        "design",
+        "ideation"
+      ],
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "subdir": "skills/brainstorming"
+      },
+      "hasScripts": true
+    },
+    {
+      "id": "systematic-debugging",
+      "kind": "skills",
+      "name": "Systematic debugging",
+      "description": "Four-phase root-cause debugging: reproduce, isolate, hypothesize, verify before fixing.",
+      "author": "obra",
+      "license": "MIT",
+      "category": "code-quality",
+      "tags": [
+        "debugging",
+        "root-cause"
+      ],
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "subdir": "skills/systematic-debugging"
+      },
+      "hasScripts": false
+    },
+    {
+      "id": "test-driven-development",
+      "kind": "skills",
+      "name": "Test-driven development",
+      "description": "Red-green-refactor discipline: write the failing test first, then the minimal code to pass it.",
+      "author": "obra",
+      "license": "MIT",
+      "category": "testing",
+      "tags": [
+        "tdd",
+        "testing"
+      ],
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "subdir": "skills/test-driven-development"
+      },
+      "hasScripts": false
+    },
+    {
+      "id": "writing-plans",
+      "kind": "skills",
+      "name": "Writing plans",
+      "description": "Breaks an approved design into small, verifiable implementation steps an agent can execute.",
+      "author": "obra",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": [
+        "planning",
+        "tasks"
+      ],
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "subdir": "skills/writing-plans"
+      },
+      "hasScripts": false
+    },
+    {
+      "id": "verification-before-completion",
+      "kind": "skills",
+      "name": "Verification before completion",
+      "description": "Requires running the actual checks and reading their output before claiming work is done.",
+      "author": "obra",
+      "license": "MIT",
+      "category": "code-quality",
+      "tags": [
+        "verification",
+        "quality"
+      ],
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "subdir": "skills/verification-before-completion"
+      },
+      "hasScripts": false
+    },
+    {
+      "id": "requesting-code-review",
+      "kind": "skills",
+      "name": "Requesting code review",
+      "description": "Prepares a change for review with context, risks and a focused checklist for the reviewer.",
+      "author": "obra",
+      "license": "MIT",
+      "category": "code-quality",
+      "tags": [
+        "code-review",
+        "collaboration"
+      ],
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "subdir": "skills/requesting-code-review"
+      },
+      "hasScripts": false
+    },
+    {
+      "id": "frontend-design",
+      "kind": "skills",
+      "name": "Frontend design",
+      "description": "Guides distinctive, production-grade frontend interfaces that avoid generic AI aesthetics.",
+      "author": "anthropics",
+      "license": "Apache-2.0",
+      "category": "design",
+      "tags": [
+        "frontend",
+        "ui",
+        "design"
+      ],
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "subdir": "skills/frontend-design"
+      },
+      "hasScripts": false
+    },
+    {
+      "id": "brand-guidelines",
+      "kind": "skills",
+      "name": "Brand guidelines",
+      "description": "Applies consistent brand colors and typography to generated artifacts.",
+      "author": "anthropics",
+      "license": "Apache-2.0",
+      "category": "design",
+      "tags": [
+        "branding",
+        "typography"
+      ],
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "subdir": "skills/brand-guidelines"
+      },
+      "hasScripts": false
+    },
+    {
+      "id": "webapp-testing",
+      "kind": "skills",
+      "name": "Web app testing",
+      "description": "Tests local web applications with Playwright: screenshots, logs and UI interaction.",
+      "author": "anthropics",
+      "license": "Apache-2.0",
+      "category": "testing",
+      "tags": [
+        "playwright",
+        "e2e",
+        "browser"
+      ],
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "subdir": "skills/webapp-testing"
+      },
+      "hasScripts": true
+    },
+    {
+      "id": "mcp-builder",
+      "kind": "skills",
+      "name": "MCP server builder",
+      "description": "Guides building high-quality Model Context Protocol servers in Python or TypeScript.",
+      "author": "anthropics",
+      "license": "Apache-2.0",
+      "category": "editor-integration",
+      "tags": [
+        "mcp",
+        "integration",
+        "tools"
+      ],
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "subdir": "skills/mcp-builder"
+      },
+      "hasScripts": true
+    }
+  ]
+}
